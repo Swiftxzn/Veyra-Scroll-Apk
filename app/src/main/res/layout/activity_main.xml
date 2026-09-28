@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Seu layout original envelopado dentro do FrameLayout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnFlash"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_margin="11dp"
+            android:background="#00008B"
+            android:textColor="#ffffff"
+            android:textSize="25px"
+            android:text="Flash" />
+
+        <!-- FLASH -->
+        <View
+            android:id="@+id/viewFlashOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:visibility="gone" />
+
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Incline a cabeça"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <!-- Sensibilidade -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sensibilidade (quanto maior = menos sensível)"
+            android:textColor="#AAAAAA"
+            android:textAlignment="center"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="#B42E2E2E"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSensLess"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="#00008B"
+                android:textColor="#FFFFFF"
+                android:text="&lt;" />
+
+            <TextView
+                android:id="@+id/txtSensitivity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="18"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnSensMore"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="#00008B"
+                android:textColor="#FFFFFF"
+                android:text=">" />
+
+        </LinearLayout>
+
+        <!-- Tempo entre scrolls -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tempo entre scrolls (ms)"
+            android:textAlignment="center"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="#B42E2E2E"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCooldownLess"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="#00008B"
+                android:textColor="#FFFFFF"
+                android:text="&lt;" />
+
+            <TextView
+                android:id="@+id/txtCooldown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1500"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnCooldownMore"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="#00008B"
+                android:textColor="#FFFFFF"
+                android:text=">" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAccessibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#00008B"
+            android:textColor="#FFFFFF"
+            android:text="Ativar Acessibilidade" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#00008B"
+            android:textColor="#FFFFFF"
+            android:text="Parar Detecção" />
+
+    </LinearLayout>
+
+    <!-- NOVO: O quadrado branco (Flash) que cobre a tela inteira por cima de tudo -->
+    <View
+        android:id="@+id/viewFlashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="gone" />
+
+</FrameLayout>
